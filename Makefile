@@ -4,6 +4,5 @@ help:
 
 .PHONY: format
 format: ## Format.
-	ag -l '\r' | xargs -r -t sed -i -e 's/\r//'
-	prettier --write *.md
-
+	ag -l '\r' | xargs -t -I{} sed -i -e 's/\r//' {}
+	prettier --write ./*.md
