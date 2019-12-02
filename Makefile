@@ -5,8 +5,9 @@ help:
 .PHONY: format
 format: ## Format.
 	ag -l '\r' | xargs -t -I{} sed -i -e 's/\r//' {}
-	npx prettier --write */*.md
-	npx textlint --fix */*.md
+	npx prettier --write *.md */*.md
+	npx prettier --write package.json
+	npx textlint --fix *.md */*.md
 
 .PHONY: init
 init: ## Initialize.
