@@ -4,7 +4,7 @@
 
 Let's create stateful systems, by Elixir. Elixir で stateful なアプリケーションを作るのは簡單です。
 
-Elixir の得意な事としてよく真っ先に擧げられるのは竝列性 parallelism です。確かに、簡單で安全に或る程度效率好く parallel にできるのは Elixir の得意とするところです。しかし parallel である事が得意な言語/環境は他にも在ります。Go は人気で簡單に parallel に成り、そこまで安全ではありませんがそこまで危險でもなく、高速です。Clojure (core.async) は parallel な變換處理を簡單に構築し組織できます。Akka (Scala) は Erlang と殆ど同じ思想で作られ、殆ど同じ事を實現できます。また SIMD や GPU 等の parallelism を扱ふのは、Erlang VM は未だ苦手です (これも得意にしようと云ふ試みは在り、樂しみです)。
+Elixir の得意な事としてよく眞っ先に擧げられるのは竝列性 parallelism です。確かに、簡單で安全に或る程度效率好く parallel にできるのは Elixir の得意とするところです。しかし parallel である事が得意な言語/環境は他にも在ります。Go は人気で簡單に parallel に成り、そこまで安全ではありませんがそこまで危險でもなく、高速です。Clojure (core.async) は parallel な變換處理を簡單に構築し組織できます。Akka (Scala) は Erlang と殆ど同じ思想で作られ、殆ど同じ事を實現できます。また SIMD や GPU 等の parallelism を扱ふのは、Erlang VM は未だ苦手です (これも得意にしようと云ふ試みは在り、樂しみです)。
 
 少なくとも今のところ、Elixir が他の言語/環境と比べて得意なのは、stateful なアプリケーションを作り運用する事です。stateful なアプリケーションを長期間運用するのには面倒な前提を色々と滿たさなければなりませんんが、Elixir と Erlang VM にはその仕組みが備はってゐるので簡單ですね、と云ふ話を以下でしました。GenStage や Phoenix.Channel は典型的な stateful アプリケーションです。
 
