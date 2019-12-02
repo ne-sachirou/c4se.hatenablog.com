@@ -1,0 +1,24 @@
+{
+  "name": "c4se.hatenablog.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ne-sachirou/c4se.hatenablog.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ne-sachirou/c4se.hatenablog.com/issues"
+  },
+  "homepage": "https://github.com/ne-sachirou/c4se.hatenablog.com#readme",
+  "devDependencies": {
+    "prettier": "^1.19.1",
+    "textlint": "^11.5.0",
+    "textlint-rule-preset-japanese": "^4.0.4"
+  }
+}

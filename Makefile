@@ -5,4 +5,15 @@ help:
 .PHONY: format
 format: ## Format.
 	ag -l '\r' | xargs -t -I{} sed -i -e 's/\r//' {}
-	prettier --write */*.md
+	npx prettier --write */*.md
+	npx textlint --fix */*.md
+
+.PHONY: init
+init: ## Initialize.
+	npm install
+
+.PHONY: test
+test: ## Test.
+	npm audit
+	npm outdated
+	npx textlint */*.md
