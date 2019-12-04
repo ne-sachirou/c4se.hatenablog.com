@@ -12,6 +12,7 @@ format: ## Format.
 .PHONY: init
 init: ## Initialize.
 	npm install
+	npm fund
 
 .PHONY: test
 test: ## Test.
