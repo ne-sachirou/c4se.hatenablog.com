@@ -70,13 +70,13 @@ Scala には Java 由來の OOP が有る。これは Java の class を呼ぶ�
 
 Elixir の parallelism は本質的で、parallel にせず application を作る事が出來ない。全ての application は Application と云ふ種類の actor の集まりであり、Application に Supervisor や GenServer 等と云ふ actor 群をぶら下げる事から開發は始まる。
 
-Scala に置いて actor system の利用は optional である。Elixir では OTP に依り actor を組織化するやり方が強制されてゐるが、Scala / Akka ではさうではないから必ずしも使ひよく組織化されてゐるとは限らない。
+Scala に於いて actor system の利用は optional である。Elixir では OTP に依り actor を組織化するやり方が強制されてゐるが、Scala / Akka ではさうではないから必ずしも使ひよく組織化されてゐるとは限らない。
 
-その逆に Scala では parallelism を actor model 以外に實現する事が出來る。Java の syncronize や java.util.concurrent class を使っても好いし、ScalaSTM も在る。
+その逆に Scala では parallelism を actor model 以外に實現する事が出來る。Java の synchronize や java.util.concurrent class を使っても好いし、ScalaSTM も在る。
 
 ### VM level での分散環境
 
-Erlang VM は複數の VM を協調させられる。Akka でも出來るが、VM level で support されてゐるといつでもその手段を取れるので少し嬉しい。Elixir で、動作中の application に REPL 繋げるのはこの仕組のおかげだ。
+Erlang VM は複數の VM を協調させられる。Akka でも出來るが、VM level で support されてゐるといつでもその手段を取れるので少し嬉しい。Elixir で、動作中の application に REPL を繋げられるのはこの仕組のおかげだ。
 
 ### fault tolerant
 
