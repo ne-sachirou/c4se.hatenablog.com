@@ -9,4 +9,4 @@
 
 deadtrickster/beam-dashboards を Prometheus + Grafana で使ってゐた事も在ったが、Prometheus の運用自體が自明ではない。Prometheus はまた運用してみやうと思ふが、Mackerel だけで取り敢へず充分な狀態を作ってしまへる。
 
-[ne-sachirou/ex_komachi_heartbeat](https://github.com/ne-sachirou/ex_komachi_heartbeat) は私が作ってゐる Elixir の library で、名前は同名の Rubygems からとった。Rubygems のを作ったのは知り合ひで、同じ組織が同じ目的に使ふ爲に作ったのでそう成った。HTTP 接續を受け入れるか否かの死活監視が出來るのと、plugin を書けば繋がってゐる DB 等との接續監視や統計情報が見られる。K8s の readiness probe と組み合はせて、DB と接續したり Application の起動處理が終はる迄 `/ops/heartbeat` で OK を返さず load balancer に加へるのを待たせる事をしてゐた。今回喋った `KomachiHeartbeat.BeamVital` は恥ずかしながら開發中で pull request の狀態に在る。情報蒐集法が面倒なので、書き直すつもりだ。
+[ne-sachirou/ex_komachi_heartbeat](https://github.com/ne-sachirou/ex_komachi_heartbeat) は私が作ってゐる Elixir の library で、名前は同名の Rubygems からとった。Rubygems のを作ったのは知り合ひで、同じ組織が同じ目的に使ふ爲に作ったのでそう成った。HTTP 接續を受け入れるか否かの死活監視が出來るのと、plugin を書けば繋がってゐる DB 等との接續監視や統計情報が見られる。K8s の readiness probe と組み合はせて、DB と接續したり Application の起動處理が終はる迄 `/ops/heartbeat` で OK を返さず load balancer に加へるのを待たせる事をしてゐた。今囘喋った `KomachiHeartbeat.BeamVital` は恥ずかしながら開發中で pull request の狀態に在る。情報蒐集法が面倒なので、書き直すつもりだ。

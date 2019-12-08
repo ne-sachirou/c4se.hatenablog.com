@@ -26,7 +26,7 @@ Elixir は Erlang VM (BEAM)で動作し、VM が actor model を support する�
 
 actor は狀態を持つから、data が書き換はるやうに見える事には注意する。實際のところ手元に有る data は actor 名であってこれは書き換へられない。
 
-actor model を始から support する最近の言語には他に Pony が在る。
+actor model を始めから support する最近の言語には他に Pony が在る。
 
 ### 既存の資産
 
@@ -34,7 +34,7 @@ Elixir は Erlang の module を使へ、Scala は Java の class を使へる�
 
 ### Web browser でも動作する
 
-Elixir には ElixirScript が、Scala には Scala.js が在り、JavaScrit へ transpile 出來る。また Elixir は Lumen で、Scala は Scala Native にて WebAssembly にする事が出來る。
+Elixir には ElixirScript が、Scala には Scala.js が在り、JavaScript へ transpile 出來る。また Elixir は Lumen で、Scala は Scala Native にて WebAssembly にする事が出來る。
 
 他の實裝 Erlang VM / Elixir :
 
@@ -52,7 +52,7 @@ Elixir には ElixirScript が、Scala には Scala.js が在り、JavaScrit へ
 
 ### 型の扱ひ
 
-最も異なるのは型であらう。Elixir は compile 時に型検査をしないが、Dialyzer と云ふ仕組みが有って靜的型検査が出來る。しかし Dialyzer の型 system (success typing) は表現力が低く、動作も遲い。更には曖昧な Erlang / Elixir の code に合はせきれないところがあり、無視設定を書く事に成る (型 system の表現力が低いので Dialyzer を通る程 program を複雜化させる insantive の無い場合が有る)。
+最も異なるのは型であらう。Elixir は compile 時に型檢査をしないが、Dialyzer と云ふ仕組みが有って靜的型檢査が出來る。しかし Dialyzer の型 system (success typing) は表現力が低く、動作も遲い。更には曖昧な Erlang / Elixir の code に合はせきれないところがあり、無視設定を書く事に成る (型 system の表現力が低いので Dialyzer を通る程 program を複雜化させる insantive の無い場合が有る)。
 
 Scala の型 system は表現力が高い。generics も部分型も trait も有り、Elixir の樣に struct が型 system 上では全部 map に他ならないと云ふ事も無いので、代數的 data 型も役に立つ。
 
