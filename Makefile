@@ -4,10 +4,16 @@ help:
 
 .PHONY: format
 format: ## Format.
+ifdef FORMAT_TARGET
+	sed -i -e 's/\r//' '${FORMAT_TARGET}'
+	npx prettier --write '${FORMAT_TARGET}'
+	npx textlint --fix '${FORMAT_TARGET}'
+else
 	ag -l '\r' | xargs -t -I{} sed -i -e 's/\r//' {}
 	npx prettier --write *.md */*.md
 	npx prettier --write package.json
 	npx textlint --fix *.md */*.md
+endif
 
 .PHONY: init
 init: ## Initialize.
@@ -19,3 +25,10 @@ test: ## Test.
 	npm audit
 	npm outdated
 	npx textlint */*.md
+
+.PHONY: watch
+watch: ## Watch file changes & do things.
+	inotifywait -m -e create,modify,moved_to --exclude '(/sed[A-Za-z0-9]+)|/$$' --timefmt "%Y%m%d%H%M" --format "%T	%w%f" 2019 2020 | \
+	stdbuf -oL -eL uniq | \
+	awk -F"	" '{print$$2}{system("")}' | \
+	xargs -t -I{} $(MAKE) FORMAT_TARGET='{}' format
