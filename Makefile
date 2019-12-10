@@ -5,7 +5,6 @@ help:
 .PHONY: format
 format: ## Format.
 ifdef FORMAT_TARGET
-	sed -i -e 's/\r//' '${FORMAT_TARGET}'
 	npx prettier --write '${FORMAT_TARGET}'
 	npx textlint --fix '${FORMAT_TARGET}'
 else
@@ -28,7 +27,14 @@ test: ## Test.
 
 .PHONY: watch
 watch: ## Watch file changes & do things.
-	inotifywait -m -e create,modify,moved_to --exclude '(/sed[A-Za-z0-9]+)|/$$' --timefmt "%Y%m%d%H%M" --format "%T	%w%f" 2019 2020 | \
+ifeq  ($(shell uname),Darwin)
+	fswatch -e '/\.' --event=Created --event=Updated --event=MovedTo -f "%Y%m%d%H%M" --format "%t	%p" 2019 2020 | \
+	unbuffer -p uniq | \
+	awk -F"	" '{print$$2}{system("")}' | \
+	xargs -t -I{} $(MAKE) FORMAT_TARGET='{}' format
+else
+	inotifywait -m -e create,modify,moved_to --exclude '(/\..+)|/$$' --timefmt "%Y%m%d%H%M" --format "%T	%w%f" 2019 2020 | \
 	stdbuf -oL -eL uniq | \
 	awk -F"	" '{print$$2}{system("")}' | \
 	xargs -t -I{} $(MAKE) FORMAT_TARGET='{}' format
+endif
