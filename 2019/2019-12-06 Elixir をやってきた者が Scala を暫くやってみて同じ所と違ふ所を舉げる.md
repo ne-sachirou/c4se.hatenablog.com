@@ -80,7 +80,7 @@ Erlang VM は複數の VM を協調させられる。Akka でも出來るが、V
 
 ### fault tolerant
 
-Elixir の actor は障害の單位であり、VM の SEGV や VM 全體での leak 以外の障害を actor に閉じ込められる。resource の制限も出來るし、error からの回復も出來る。Scala の actor はさうではない。但し Akka を使へば error への對處は出來るやうに成る。
+Elixir の actor は障礙の單位であり、VM の SEGV や VM 全體での leak 以外の障礙を actor に閉じ込められる。resource の制限も出來るし、error からの回復も出來る。Scala の actor はさうではない。但し Akka を使へば error への對處は出來るやうに成る。
 
 ### 非線形な pattern match
 
@@ -100,6 +100,6 @@ implicit には多くの應用が在る。例へば DI (Dependency Injection) �
 
 ### GPU, SIMD
 
-Elixir からは GPU や SIMD 等 actor model 以外の parallelism を扱へない (C で書いて C node として繋ぐ、別の application として Elixir 以外で書いて RPC する等は出來る)。VM level で actor model が強制されてゐるから難しく、努力は成されてゐるものの未だ實現してゐない。Scala にはこの障害は無い。
+Elixir からは GPU や SIMD 等 actor model 以外の parallelism を扱へない (C で書いて C node として繋ぐ、別の application として Elixir 以外で書いて RPC する等は出來る)。VM level で actor model が強制されてゐるから難しく、努力は成されてゐるものの未だ實現してゐない。Scala にはこの障礙は無い。
 
 12/7 は id:hokkai7go だ。
