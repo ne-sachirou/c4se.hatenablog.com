@@ -44,7 +44,7 @@
 
 これは普段見るものに絞った。
 
-Komachiheartbeat とは Elixir application に healthcheck 用 endpoint を追加する library だ。healthcheck は樣々に要る場面が在る。ELB ALB の healthcheck や、Kubernetes であれば readyness probe, liveness probe が要る。そこで統一された healthcheck 確認方法が有れば便利だ。(何を healthy であるとするかと云ふ話題は他へ譲る。)これには`GET 〜/heartbeat`と云ふ path を提供する。
+KomachiHeartbeat とは Elixir application に healthcheck 用 endpoint を追加する library だ。healthcheck は樣々に要る場面が在る。ELB ALB の healthcheck や、Kubernetes であれば readyness probe, liveness probe が要る。そこで統一された healthcheck 確認方法が有れば便利だ。(何を healthy であるとするかと云ふ話題は他へ譲る。)これには`GET 〜/heartbeat`と云ふ path を提供する。
 
 更に KomachiHeartbeat は、system の狀態を JSON で返す endpoint も追加する。これには`GET 〜/stats`と云ふ path を提供する。
 
