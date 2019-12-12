@@ -6,7 +6,7 @@
 
 C に lex / yacc と云ふ字句解析 generator と構文解析 generator が有る。Erlang には標準 library に leex / yecc と云ふ同じ役割のものが有り簡單に構文解析器を作れる。Elixir からもこれを使える。
 
-昔 Elixir と JavaScript とで game を作る機會が有った。game 中で活動する各 unit は parameter を持ってゐる。parameter の調整に依り game の balance や cycle が變はるのでこの調整を簡單に素早く繰り返せる事は重要だ。調整をする人が直截 data を編輯し反映出來るのが好い。また仮に parameter の編輯や反映が programmer の作業と成ってゐると、囘數の多いこの作業に時間を取られ、parameter の反映も game 開發もどちらも後囘しに成ってしまふ。data を例へば CSV や Google Spreadsheet や理想的には専用の UI で管理して反映出來れば、これは達成出來る。これを整へるのにも開發が要り、白狀すると理想的には出來てゐなかったから一部に programmer や専門の者の手が掛ってしまってゐたが、調整者が出來る丈獨立して反映出來る樣にしてゐた。
+昔 Elixir と JavaScript とで game を作る機會が有った。game 中で活動する各 unit は parameter を持ってゐる。parameter の調整に依り game の balance や cycle が變はるのでこの調整を簡單に素早く繰り返せる事は重要だ。調整をする人が直截 data を編輯し反映出來るのが好い。また假に parameter の編輯や反映が programmer の作業と成ってゐると、囘數の多いこの作業に時間を取られ、parameter の反映も game 開發もどちらも後囘しに成ってしまふ。data を例へば CSV や Google Spreadsheet や理想的には専用の UI で管理して反映出來れば、これは達成出來る。これを整へるのにも開發が要り、白狀すると理想的には出來てゐなかったから一部に programmer や専門の者の手が掛ってしまってゐたが、調整者が出來る丈獨立して反映出來る樣にしてゐた。
 
 各 unit は skill も持ってゐる。skill は一般に複雜に成る。條件と效果、分岐、くり返し、條件の組み合はせ、效果の組み合はせ、條件や效果の打ち消し、それぞれの paramater 等は要るだらう。これを CSV 等表形式で記述しやうとすると、特定の skill 向けの専用 column が大量に生まれ場當り的に logic が増えるだけでなく、skill 設計の柔軟性も失ふ。そこで先述の skill に要る内容を見直すとこれは programming 言語である。skill を program として書いたはうが好い game も有る訣だ。例へば TCG (trading card game) である。
 
