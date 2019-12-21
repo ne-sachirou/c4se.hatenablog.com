@@ -20,7 +20,7 @@ Lisp のやうに、函數型言語だからと言って data が不變とは限
 
 ### actor model に依る parallelism
 
-actor と呼ぶ (Elixir では單に process と呼ぶ) 互ひに獨立な process を協調させて parallel に計算を行ふ。一つの actor 内部は single thread で、異なる actor は、異なる CPU core や network で繋がった異なる計算機にて動ける。actor 間で message をやり取りし協調する。
+actor と呼ぶ (Elixir では單に process と呼ぶ) 互ひに獨立な process を協調させて parallel に計算を行ふ。一つの actor 內部は single thread で、異なる actor は、異なる CPU core や network で繋がった異なる計算機にて動ける。actor 間で message をやり取りし協調する。
 
 Elixir は Erlang VM (BEAM)で動作し、VM が actor model を support する。Scala が動く JVM は直接には actor model を support しないが、Scala の言語機能に Actor が有り、また Akka と云ふ Scala で広く使はれる library で actor model を使へる。Akka は Erlang OTP を參考に作ってあって同樣の機能が有る。別 process で處理を行ふだけの簡單な用途では Elixir には Task と云ふ module が有るが、Scala にも Future, Promise と云ふ同等の仕組みが有る。
 
@@ -28,7 +28,7 @@ actor は狀態を持つから、data が書き換はるやうに見える事に
 
 actor model を始めから support する最近の言語には他に Pony が在る。
 
-### 既存の資産
+### 既存の資產
 
 Elixir は Erlang の module を使へ、Scala は Java の class を使へる。どちらも OTP や JRE と云ふ大きな標準 library を持つ。Erlang も Java も長い歴史を持ち多くの library が公開されてゐる。
 
@@ -90,7 +90,7 @@ Erlang / Elixir の pattern match は非線形で、
 {x, x} = {1, 1}
 ```
 
-が出來る。pattern 内に同じ名を複數囘登場させられる。一方で正規形を持たない data の pattern match は出來ない。これは Scala では unapply を書く事で對應出來る。
+が出來る。pattern 內に同じ名を複數囘登場させられる。一方で正規形を持たない data の pattern match は出來ない。これは Scala では unapply を書く事で對應出來る。
 
 ### implicit
 

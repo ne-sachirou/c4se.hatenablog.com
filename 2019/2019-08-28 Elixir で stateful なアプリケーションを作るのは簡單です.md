@@ -12,7 +12,7 @@ Elixir の得意な事としてよく眞っ先に擧げられるのは竝列性 
 
 [Let's create stateful systems, by Elixir](https://speakerdeck.com/ne_sachirou/lets-create-stateful-systems-by-elixir)
 
-數年前に Elixir に關する記事を書く事が流行って以來、Elixir に入門する情報は充實してゐます。これは同じやうな内容でも場に細かく合はせて繼續して書かれる事の要る領野なので、今後も増えてゆく事が期待されますが、Elixir に入門し使へる段階から、Elixir で優れた機能を作る爲の、と云ふ中間的な段階の資料は全く不足してゐます。その資料の一つであるべく、Elixir の表面的な動作を説明するものが以下です。
+數年前に Elixir に關する記事を書く事が流行って以來、Elixir に入門する情報は充實してゐます。これは同じやうな內容でも場に細かく合はせて繼續して書かれる事の要る領野なので、今後も増えてゆく事が期待されますが、Elixir に入門し使へる段階から、Elixir で優れた機能を作る爲の、と云ふ中間的な段階の資料は全く不足してゐます。その資料の一つであるべく、Elixir の表面的な動作を説明するものが以下です。
 
 <script async class="speakerdeck-embed" data-id="cb3572677d9d42279b9facb5361c08c5" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>
 

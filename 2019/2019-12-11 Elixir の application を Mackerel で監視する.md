@@ -8,7 +8,7 @@
 
 確かに Erlang/Elixir の system は落ちない。programmer が落ちないやうに書けば落ちなく出來るからだ。基本的な道具は BEAM VM (Erlang VM) と Supervisor の木である。
 
-勿論落ちる事は在る。tuple の入れ子が深過ぎて SEGV したり、memory を使ひ過ぎて OOM Killer に落とされたりだ。memory の使ひ過ぎは、ETS からの data copy <small>(通常の代入や message passing と違ひ、同じ data でも毎囘 copy される)</small>、`:erlang.binary_to_term/2` <small>(理由は ETS のに近い)</small>、atom の増大、process の増大、大きな binary の GC の遲れ、message queue の溢れ <small>(back-pressure の仕組みを作らなければならない。back-pressure により處理速度が激減する事も有るので注意する。或いは process 自身が message queue の長さを監視して自殺する)</small> 等に依り起こる。これらの問題は process 内に閉じ込められたり runtime で解決出來るものも有れば、成す術も無くただ設計や logic を直すものも有る。
+勿論落ちる事は在る。tuple の入れ子が深過ぎて SEGV したり、memory を使ひ過ぎて OOM Killer に落とされたりだ。memory の使ひ過ぎは、ETS からの data copy <small>(通常の代入や message passing と違ひ、同じ data でも毎囘 copy される)</small>、`:erlang.binary_to_term/2` <small>(理由は ETS のに近い)</small>、atom の増大、process の増大、大きな binary の GC の遲れ、message queue の溢れ <small>(back-pressure の仕組みを作らなければならない。back-pressure により處理速度が激減する事も有るので注意する。或いは process 自身が message queue の長さを監視して自殺する)</small> 等に依り起こる。これらの問題は process 內に閉じ込められたり runtime で解決出來るものも有れば、成す術も無くただ設計や logic を直すものも有る。
 
 また落ちない事は所詮落ちないだけに過ぎない。處理速度が一時的/恒常的に下がったり、長期的な leak は知らなければならない。
 

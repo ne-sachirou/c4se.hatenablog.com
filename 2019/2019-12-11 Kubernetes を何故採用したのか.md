@@ -21,13 +21,13 @@
 
 検討を始めた時には何となく動く Elixir application は既に在り、infrastructure に求められる事も判ってゐた。Elixir application を動かす。多くの WebSocket を安定して繋ぐ。極端に好い network 性能は求めない。application は素早く scala-in/out する。寢てゐても scale-in/out すると嬉しい。幾つかの subsystem が動く。subsystem は増えたり種類が換はったりするかもしれない。よって構成を變へる柔軟性を保ちたい。出來れば server programmer が變更したい。Elixir application を EC2 上に直截置くのではなく container に入れる事で、下の server から抽象化したい。
 
-組織内にこのやうな前例は無かった。世間には在る樣だったが詳細は判らない。そこで技術撰定をしなければならなく成った。
+組織內にこのやうな前例は無かった。世間には在る樣だったが詳細は判らない。そこで技術撰定をしなければならなく成った。
 
-先づ Elixir application を動かす前例は組織内に有った。また新たに開發されつつもあった。しかし多くの常時接續を行ふ例は無く (Elixir 以外では有った)、scale-in/out も遲い。新たに開發されつつあった手法は、動かす application の logic は我々と比較すると單純で構成が安定し、負荷も豫測し易いものだった。また container は考慮されてゐない。
+先づ Elixir application を動かす前例は組織內に有った。また新たに開發されつつもあった。しかし多くの常時接續を行ふ例は無く (Elixir 以外では有った)、scale-in/out も遲い。新たに開發されつつあった手法は、動かす application の logic は我々と比較すると單純で構成が安定し、負荷も豫測し易いものだった。また container は考慮されてゐない。
 
 これを採用しても運用出來ただらうが、Kubernetes はより好い撰擇だと思はれた。
 
-先づ Kubernetes には實績が有る。eco-system も揃い rail が敷かれつつあった。組織的にもいずれは採用しなければならない。container を動かす前例は組織内に無かったから自由に撰べる。組織の全体は cloud service を限定してゐなかったので、AWS 以外も使ふ。そこでも使へると know how を共有出來て好ましい。これも rail だ。構成の變更も Kubernetes 上で出來る。
+先づ Kubernetes には實績が有る。eco-system も揃い rail が敷かれつつあった。組織的にもいずれは採用しなければならない。container を動かす前例は組織內に無かったから自由に撰べる。組織の全体は cloud service を限定してゐなかったので、AWS 以外も使ふ。そこでも使へると know how を共有出來て好ましい。これも rail だ。構成の變更も Kubernetes 上で出來る。
 
 そこで試してみる事にした。
 
@@ -37,11 +37,11 @@
 
 世間には Kubernetes で似た system の實績は有るので、理論的に「作れない」事は無い。
 
-運好く team 内に或る程度の規模で Kubernetes を構築し運用した經驗の有る者がゐた。
+運好く team 內に或る程度の規模で Kubernetes を構築し運用した經驗の有る者がゐた。
 
 組織に infrastructure を開發・管理する team が有り、そこの協力は得られた。(その後實際には cluster の構築と、管理の大部分とをやっていただいた。勿論ありがたいが、私の力不足でもあった)
 
-また fallback 先に、組織内で開發されつつあった手法を取れると判ってゐた。cluster を構築し始めか、或いは開發が進み subsystem の構成が決まった後なら fallback 出來る。
+また fallback 先に、組織內で開發されつつあった手法を取れると判ってゐた。cluster を構築し始めか、或いは開發が進み subsystem の構成が決まった後なら fallback 出來る。
 
 そこで作り切れると判斷した。
 
@@ -55,7 +55,7 @@
 
 ## 人を増やせるか? team を作れるか?
 
-組織内に前例が無く、業界にも前例が少ない application であるから、經驗者を呼ぶ事はどの手段を取ってもそもそも望めない。
+組織內に前例が無く、業界にも前例が少ない application であるから、經驗者を呼ぶ事はどの手段を取ってもそもそも望めない。
 
 組織的にも Kubernetes は進めなければならないものだったから、backup は期待出來る。これも rail である。
 
