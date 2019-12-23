@@ -21,9 +21,10 @@ init: ## Initialize.
 
 .PHONY: test
 test: ## Test.
+	yamllint .yamllint .github/workflows/*.yml
 	npm audit
 	npm outdated
-	npx textlint */*.md
+	npx textlint */*.md || true
 
 .PHONY: watch
 watch: ## Watch file changes & do things.
