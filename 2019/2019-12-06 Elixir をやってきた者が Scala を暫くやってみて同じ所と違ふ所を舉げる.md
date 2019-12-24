@@ -80,7 +80,7 @@ Erlang VM は複數の VM を協調させられる。Akka でも出來るが、V
 
 ### fault tolerant
 
-Elixir の actor は障礙の單位であり、VM の SEGV や VM 全體での leak 以外の障礙を actor に閉じ込められる。resource の制限も出來るし、error からの回復も出來る。Scala の actor はさうではない。但し Akka を使へば error への對處は出來るやうに成る。
+Elixir の actor は障礙の單位であり、VM の SEGV や VM 全體での leak 以外の障礙を actor に閉じ込められる。resource の制限も出來るし、error からの囘復も出來る。Scala の actor はさうではない。但し Akka を使へば error への對處は出來るやうに成る。
 
 ### 非線形な pattern match
 
