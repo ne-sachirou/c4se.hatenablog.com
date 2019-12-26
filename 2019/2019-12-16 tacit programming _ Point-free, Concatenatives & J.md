@@ -1,5 +1,5 @@
 <!--
-{"id":"26006613489364887","title":"tacit programming : Point-free, Concatenatives & J","categories":["Programming"," J lang"],"draft":"no"}
+{"id":"26006613489364887","title":"tacit programming : Point-free, Concatenatives & J","categories":["Programming"," J lang", "Factor", "Popr"],"draft":"no"}
 -->
 
 tacit programming は point-free style としても知られてゐる。函數適用を使って函數を組み立てるのではなく、函數合成を基本の部品とするやり方だ。見た目上では函數の定義から引數が消える。
@@ -60,7 +60,7 @@ average [2, 3]
 
 [HackerFoo/poprc: A Compiler for the Popr Language](https://github.com/HackerFoo/poprc)
 
-Popr で平均はこうする
+Popr で平均はこうする。
 
 ```popr
 average: dup sum swap length /f
